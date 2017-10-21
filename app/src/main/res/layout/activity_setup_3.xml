@@ -42,6 +42,7 @@
                 android:id="@+id/et_inputphone"
                 android:layout_weight="5"
                 android:background="@drawable/coner_white_rec"
+                android:drawableLeft="@drawable/contact_et_left_icon"
                 android:hint="请输入安全手机号码"
                 android:inputType="phone"
                 android:textColorHint="@color/purple"/>
