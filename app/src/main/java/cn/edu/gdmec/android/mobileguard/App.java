@@ -11,7 +11,7 @@ import android.util.Log;
 /**
  * Created by Jack on 2017/10/20.
  */
-
+//1021
 public class App extends Application {
     @Override
     public void onCreate(){
