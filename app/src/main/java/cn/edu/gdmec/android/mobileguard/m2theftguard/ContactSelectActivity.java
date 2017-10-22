@@ -62,7 +62,7 @@ public class ContactSelectActivity extends AppCompatActivity implements View.OnC
             @Override
             public void run() {
                 systemContacts = ContactInfoParser.getSystemContact(ContactSelectActivity.this);
-               //少了
+                systemContacts.addAll(ContactInfoParser.getSimContacts(ContactSelectActivity.this));
                 mHandler.sendEmptyMessage(10);
             };
         }.start();
