@@ -1,23 +1,45 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
-    repositories {
-        jcenter()
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "cn.edu.gdmec.android.mobileguard"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICESE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INFTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/License.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGP2.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('src/libs/commons-codec-1.9.jar')
+    compile files('src/libs/httpclient-4.5.2.jar')
+    compile files('src/libs/httpcore-4.4.4.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
 }
