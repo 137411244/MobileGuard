@@ -34,7 +34,7 @@ public class HomeAdapter extends BaseAdapter {
     public long getItemId(int i){
         return 0;
     }
-
+//1022
     @Override
     public View getView(int i, View view, ViewGroup viewGroup){
         View view1 = View.inflate(context,R.layout.item_home,null);
