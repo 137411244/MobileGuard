@@ -27,7 +27,7 @@ public class ContactInfoParser {
         while (cursor.moveToNext()) {
             String id = cursor.getString(0);
             if (id != null) {
-                System.out.println("联系人ID：" + id);
+                System.out.println("联系人id：" + id);
                 ContactInfo info = new ContactInfo();
                 info.id = id;
 

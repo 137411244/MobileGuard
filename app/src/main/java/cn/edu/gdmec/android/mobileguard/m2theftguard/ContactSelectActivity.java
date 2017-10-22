@@ -45,7 +45,7 @@ public class ContactSelectActivity extends AppCompatActivity implements View.OnC
 };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_select);
         initView();
@@ -62,7 +62,7 @@ public class ContactSelectActivity extends AppCompatActivity implements View.OnC
             @Override
             public void run() {
                 systemContacts = ContactInfoParser.getSystemContact(ContactSelectActivity.this);
-                systemContacts.addAll(ContactInfoParser.getSimContacts(ContactSelectActivity.this));
+               //少了
                 mHandler.sendEmptyMessage(10);
             };
         }.start();
